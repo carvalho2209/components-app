@@ -55,4 +55,8 @@ export class ProductDashboardComponent implements OnInit {
       image: 'headset.jpg'
     }]
   }
+
+  changeStatus(event: Product) {
+    event.active = !event.active;
+  }
 }

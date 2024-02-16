@@ -29,8 +29,10 @@
       <a [ngClass]="product.active ? 'btn btn-success' : 'btn btn-danger'" (click)="issueEvent()"
         href="javascript:void(0)">
         <span><span [ngClass]="product.active ? 'fa fa-toggle-on' : 'fa fa-toggle-off'"> </span>Status</span>
-        Button
       </a>
+      &nbsp;
+      <a [routerLink]="['edit/', product.id]" class="btn btn-primary">Edit</a>
+
     </div>
 
   </div>

@@ -28,7 +28,7 @@ import { NavigationModule } from './navigation/navigation.module';
   ],
   providers: [
     provideClientHydration(),
-    {provide: APP_BASE_HREF, useValue: '/'}
+
   ],
   bootstrap: [AppComponent]
 })

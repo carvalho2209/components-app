@@ -6,12 +6,17 @@ import { ProductDetailComponent } from "./components/product-card-detail.compone
 
 import { ProductRoutingModule } from "./product.route";
 import { ProductCountComponent } from "./components/product-count.component";
+import { EditProductComponent } from './edit-product/edit-product.component';
+import { ProductAppComponent } from "./product.app.component";
+
 
 @NgModule({
   declarations: [
+    ProductAppComponent,
     ProductDashboardComponent,
     ProductDetailComponent,
     ProductCountComponent,
+    EditProductComponent,
   ],
   imports: [
     CommonModule,

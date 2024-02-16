@@ -1,20 +1,25 @@
-<p>edit-product works!</p>
-<p>edit-product works!</p>
-<p>edit-product works!</p>
-<p>edit-product works!</p>
-<p>edit-product works!</p>
-<p>edit-product works!</p>
-<p>edit-product works!</p>
-<p>edit-product works!</p>
-<p>edit-product works!</p>
-<p>edit-product works!</p>
-<p>edit-product works!</p>
-<p>edit-product works!</p>
-<p>edit-product works!</p>
-<p>edit-product works!</p>
-<p>edit-product works!</p>
-<p>edit-product works!</p>
-<p>edit-product works!</p>
-<p>edit-product works!</p>
-<p>edit-product works!</p>
-<p>edit-product works!</p>
+<div class="container main-container">
+  <div class="card h-100">
+    <div style="align-content:center;">
+      <img src="/assets/{{ product?.image }}" height="164px" width="253px" alt="">
+    </div>
+
+    <h4 class="card-title">{{ product?.name| titlecase }}</h4>
+
+    <div [ngSwitch]="product?.active">
+      <p *ngSwitchCase="true">In stock</p>
+      <p *ngSwitchCase="false">Out of stock</p>
+    </div>
+
+    <div *ngIf="product?.active" class="card-body">
+      <div>
+        <h4>{{ product?.amount | currency }}</h4>
+        <ng-content select=".run"></ng-content>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <a href="javascript:void(0)" (click)="save()" class="btn btn-primary">Save</a>
+    </div>
+  </div>
+</div>

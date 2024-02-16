@@ -8,6 +8,7 @@ import { ProductRoutingModule } from "./product.route";
 import { ProductCountComponent } from "./components/product-count.component";
 import { EditProductComponent } from './edit-product/edit-product.component';
 import { ProductAppComponent } from "./product.app.component";
+import { ProductService } from "./services/product.service";
 
 
 @NgModule({
@@ -22,7 +23,10 @@ import { ProductAppComponent } from "./product.app.component";
     CommonModule,
     ProductRoutingModule
   ],
-  exports: []
+  exports: [],
+  providers: [
+    ProductService
+  ]
 })
 
 export class ProductModule{}

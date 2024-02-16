@@ -27,7 +27,7 @@ export class MenuComponent {
     {
       link: '/products',
       name: 'Products',
-      exact: true,
+      exact: false,
       admin: false
     },
   ];

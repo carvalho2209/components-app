@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../services/product.service';
 import { Product } from '../Models/product';
 
@@ -10,7 +10,10 @@ import { Product } from '../Models/product';
 
 export class EditProductComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private productService: ProductService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private productService: ProductService,
+    private router: Router) { }
 
   product: Product | undefined;
 
@@ -22,6 +25,6 @@ export class EditProductComponent implements OnInit {
   }
 
   save() {
-    throw new Error('Method not implemented.');
+    this.router.navigate(['/products']);
   }
 }

@@ -51,7 +51,7 @@ export class ProductService {
 
   getAll(state: string): Product[] {
 
-    if (state === 'actives') {
+    if (state == 'actives') {
       return this.products.filter(prod => prod.active);
     }
 

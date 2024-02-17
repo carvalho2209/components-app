@@ -6,9 +6,9 @@ import { AppComponent } from './app.component';
 import { AboutComponent } from './institutional/about/about/about.component';
 import { ContactComponent } from './institutional/contact/contact/contact.component';
 import { RegisterComponent } from './demo/reactiveforms/register/register.component';
-
-import { APP_BASE_HREF } from '@angular/common';
 import { NavigationModule } from './navigation/navigation.module';
+import { AuthGuard } from './services/app.guard';
+import { RegisterGuard } from './services/register.guard';
 
 
 @NgModule({
@@ -17,7 +17,6 @@ import { NavigationModule } from './navigation/navigation.module';
     AboutComponent,
     RegisterComponent,
     ContactComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -28,7 +27,8 @@ import { NavigationModule } from './navigation/navigation.module';
   ],
   providers: [
     provideClientHydration(),
-
+    AuthGuard,
+    RegisterGuard,
   ],
   bootstrap: [AppComponent]
 })

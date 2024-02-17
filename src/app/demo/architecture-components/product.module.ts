@@ -10,7 +10,6 @@ import { EditProductComponent } from './edit-product/edit-product.component';
 import { ProductAppComponent } from "./product.app.component";
 import { ProductService } from "./services/product.service";
 
-
 @NgModule({
   declarations: [
     ProductAppComponent,
@@ -25,7 +24,7 @@ import { ProductService } from "./services/product.service";
   ],
   exports: [],
   providers: [
-    ProductService
+    ProductService,
   ]
 })
 

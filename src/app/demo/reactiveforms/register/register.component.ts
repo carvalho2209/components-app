@@ -22,6 +22,8 @@ export class RegisterComponent implements OnInit, AfterViewInit {
   genericValidator!: GenericValidator;
   displayMessage: DisplayMessage = {};
 
+  changesNotSaved: boolean;
+
   constructor(private fb: FormBuilder) {
     this.validationMessages = {
       name: {
@@ -55,7 +57,8 @@ export class RegisterComponent implements OnInit, AfterViewInit {
       .map((formControl: ElementRef) => fromEvent(formControl.nativeElement, 'blur'));
 
     merge(...controlBlurs).subscribe(() => {
-      this.displayMessage = this.genericValidator.processMessages(this.registerForm)
+      this.displayMessage = this.genericValidator.processMessages(this.registerForm);
+      this.changesNotSaved = true;
     })
   }
 
@@ -75,5 +78,7 @@ export class RegisterComponent implements OnInit, AfterViewInit {
   addUser() {
     this.user = Object.assign({}, this.user, this.registerForm.value);
     this.formResult = JSON.stringify(this.registerForm.value);
+
+    this.changesNotSaved = false;
   }
 }

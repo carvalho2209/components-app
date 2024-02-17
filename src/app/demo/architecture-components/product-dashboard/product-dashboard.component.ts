@@ -1,8 +1,10 @@
 import { AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { Product } from '../Models/product';
-import { Observable, fromEvent } from 'rxjs';
+import { Observable, fromEvent, map, of } from 'rxjs';
 import { ProductCountComponent } from '../components/product-count.component';
 import { ProductDetailComponent } from '../components/product-card-detail.component';
+import { ActivatedRoute } from '@angular/router';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'app-product-dashboard',
@@ -17,51 +19,13 @@ export class ProductDashboardComponent implements OnInit, AfterViewInit {
 
   @ViewChildren(ProductDetailComponent) botton!: QueryList<ProductDetailComponent>
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private productService: ProductService) { }
 
   ngOnInit(): void {
-    this.products = [{
-      id: 1,
-      name: 'test',
-      active: true,
-      amount: 100,
-      image: 'celular.jpg'
-    },
-    {
-      id: 2,
-      name: 'Teste 2',
-      active: true,
-      amount: 200,
-      image: 'gopro.jpg'
-    },
-    {
-      id: 3,
-      name: 'Teste 3',
-      active: true,
-      amount: 300,
-      image: 'laptop.jpg'
-    },
-    {
-      id: 4,
-      name: 'Teste 4',
-      active: true,
-      amount: 400,
-      image: 'mouse.jpg'
-    },
-    {
-      id: 5,
-      name: 'Teste 5',
-      active: true,
-      amount: 500,
-      image: 'teclado.jpg'
-    },
-    {
-      id: 6,
-      name: 'Teste 6',
-      active: false,
-      amount: 600,
-      image: 'headset.jpg'
-    }]
+    this.route.data.subscribe(({ data }) => { this.products = data; });
+    //this.route.params.subscribe(params => {this.products = this.productService.getAll(params['state']);});
   }
 
   ngAfterViewInit(): void {

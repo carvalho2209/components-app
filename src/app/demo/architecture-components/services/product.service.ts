@@ -1,5 +1,7 @@
 import { Product } from '../Models/product';
+import { Injectable } from '@angular/core';
 
+@Injectable({providedIn:'root'})
 export class ProductService {
   products: Product[];
 
@@ -51,7 +53,7 @@ export class ProductService {
 
   getAll(state: string): Product[] {
 
-    if (state == 'actives') {
+    if (state === 'active') {
       return this.products.filter(prod => prod.active);
     }
 

@@ -9,14 +9,21 @@ import { RegisterComponent } from './demo/reactiveforms/register/register.compon
 import { NavigationModule } from './navigation/navigation.module';
 import { AuthGuard } from './services/app.guard';
 import { RegisterGuard } from './services/register.guard';
+import { MoviesComponent } from './demo/pipes/movies/movies.component';
+import { FileSizePipe } from './demo/pipes/movies/filesize.pipe';
+import { ImageFormaterPipe } from './demo/pipes/movies/image.pipe';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
-    RegisterComponent,
     ContactComponent,
+    RegisterComponent,
+    MoviesComponent,
+    FileSizePipe,
+    ImageFormaterPipe
   ],
   imports: [
     BrowserModule,

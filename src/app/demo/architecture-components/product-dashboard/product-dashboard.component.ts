@@ -24,8 +24,9 @@ export class ProductDashboardComponent implements OnInit, AfterViewInit {
     private productService: ProductService) { }
 
   ngOnInit(): void {
-    this.route.data.subscribe(({ data }) => { this.products = data; });
-    //this.route.params.subscribe(params => {this.products = this.productService.getAll(params['state']);});
+    //this.route.data.subscribe(({ data }) => { this.products = data; });
+    this.route.params.subscribe(params => {this.products = this.productService.getAll(params['state']);});
+
   }
 
   ngAfterViewInit(): void {

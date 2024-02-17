@@ -1,0 +1,25 @@
+<div class="container main-container">
+
+  <h1>Movies</h1>
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col">Date</th>
+        <th scope="col">Amount</th>
+        <th scope="col">File size</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let mov of mapped'>
+        <img [src]="mov.image" style="padding-bottom: 5px;">
+        <td>{{ mov.name | titlecase }}</td>
+        <td>{{ mov.dateAt | date:"dd/MM/yyyy" }}</td>
+        <td>{{ mov.amount | currency }}</td>
+        <td>{{ mov.size | filesize }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

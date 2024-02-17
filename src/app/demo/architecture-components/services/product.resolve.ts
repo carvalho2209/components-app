@@ -7,5 +7,5 @@ export const ProductsResolve: ResolveFn<Product[]> = (
   route: ActivatedRouteSnapshot,
   state: RouterStateSnapshot,
 ) => {
-  return inject(ProductService).getAll(route.paramMap.get('state')!);
+  return inject(ProductService).getAll(route.paramMap.get('state'));
 };

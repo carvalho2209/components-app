@@ -7,6 +7,7 @@ import { RegisterComponent } from './demo/reactiveforms/register/register.compon
 import { NotFoundComponent } from './navigation/not-found/not-found.component';
 import { AuthGuard } from './services/app.guard';
 import { RegisterGuard } from './services/register.guard';
+import { MoviesComponent } from './demo/pipes/movies/movies.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'movies', component: MoviesComponent },
   {
     path: 'register', component: RegisterComponent,
     canDeactivate: [

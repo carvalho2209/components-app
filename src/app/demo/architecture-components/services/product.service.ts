@@ -1,8 +1,9 @@
 import { Product } from '../Models/product';
 import { Injectable } from '@angular/core';
 
-@Injectable({providedIn:'root'})
+@Injectable({ providedIn: 'root' })
 export class ProductService {
+
   products: Product[];
 
   constructor() {
@@ -38,7 +39,7 @@ export class ProductService {
     {
       id: 5,
       name: 'Test 5',
-      active: true,
+      active: false,
       amount: 500,
       image: 'teclado.jpg'
     },

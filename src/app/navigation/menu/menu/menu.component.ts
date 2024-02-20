@@ -43,6 +43,12 @@ export class MenuComponent {
       admin: false
     },
     {
+      link: '/bar',
+      name: 'Bar',
+      exact: true,
+      admin: false
+    },
+    {
       link: '/admin',
       name: 'Admin',
       exact: true,

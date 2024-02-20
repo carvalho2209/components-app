@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,7 +12,9 @@ import { RegisterGuard } from './services/register.guard';
 import { MoviesComponent } from './demo/pipes/movies/movies.component';
 import { FileSizePipe } from './demo/pipes/movies/filesize.pipe';
 import { ImageFormaterPipe } from './demo/pipes/movies/image.pipe';
-
+import { BarModule } from './demo/bar-di-zones/bar.module';
+import { HttpClientModule } from '@angular/common/http';
+import { BarServices } from './demo/bar-di-zones/bar.service';
 
 
 @NgModule({
@@ -23,7 +25,7 @@ import { ImageFormaterPipe } from './demo/pipes/movies/image.pipe';
     RegisterComponent,
     MoviesComponent,
     FileSizePipe,
-    ImageFormaterPipe
+    ImageFormaterPipe,
   ],
   imports: [
     BrowserModule,
@@ -31,12 +33,19 @@ import { ImageFormaterPipe } from './demo/pipes/movies/image.pipe';
     ReactiveFormsModule,
     AppRoutingModule,
     NavigationModule,
+    BarModule,
+    HttpClientModule,
+    BarModule.forRoot({
+      unityId: 100,
+      unityToken:'lkasidjfhlkas'
+    })
   ],
   providers: [
-    provideClientHydration(),
     AuthGuard,
     RegisterGuard,
+    BarServices
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

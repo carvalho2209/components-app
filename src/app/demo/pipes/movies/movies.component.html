@@ -16,7 +16,7 @@
       <tr *ngFor='let mov of mapped'>
         <img [src]="mov.image" style="padding-bottom: 5px;">
         <td>{{ mov.name | titlecase }}</td>
-        <td>{{ mov.dateAt | date:"dd/MM/yyyy" }}</td>
+        <td>{{ mov.dateAt | date }}</td>
         <td>{{ mov.amount | currency }}</td>
         <td>{{ mov.size | filesize }}</td>
       </tr>

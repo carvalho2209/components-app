@@ -5,8 +5,7 @@ import { ImageFormaterPipe } from './image.pipe';
 @Component({
   selector: 'app-movies',
   templateUrl: './movies.component.html',
-  providers: [ImageFormaterPipe],
-  host: {ngSkipHydration: 'true'},
+  providers: [ImageFormaterPipe]
 })
 
 export class MoviesComponent implements OnInit {

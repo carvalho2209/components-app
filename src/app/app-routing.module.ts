@@ -8,6 +8,7 @@ import { NotFoundComponent } from './navigation/not-found/not-found.component';
 import { AuthGuard } from './services/app.guard';
 import { RegisterGuard } from './services/register.guard';
 import { MoviesComponent } from './demo/pipes/movies/movies.component';
+import { BarComponent } from './demo/bar-di-zones/bar.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'movies', component: MoviesComponent },
+  { path: 'bar', component: BarComponent },
   {
     path: 'register', component: RegisterComponent,
     canDeactivate: [

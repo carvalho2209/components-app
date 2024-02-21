@@ -15,7 +15,7 @@ import { ImageFormaterPipe } from './demo/pipes/movies/image.pipe';
 import { BarModule } from './demo/bar-di-zones/bar.module';
 import { HttpClientModule } from '@angular/common/http';
 import { BarServices } from './demo/bar-di-zones/bar.service';
-
+import { TodoModule } from './demo/todo-list/todo.module';
 
 @NgModule({
   declarations: [
@@ -38,7 +38,8 @@ import { BarServices } from './demo/bar-di-zones/bar.service';
     BarModule.forRoot({
       unityId: 100,
       unityToken:'lkasidjfhlkas'
-    })
+    }),
+    TodoModule
   ],
   providers: [
     AuthGuard,

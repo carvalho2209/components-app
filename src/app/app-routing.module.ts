@@ -9,6 +9,7 @@ import { AuthGuard } from './services/app.guard';
 import { RegisterGuard } from './services/register.guard';
 import { MoviesComponent } from './demo/pipes/movies/movies.component';
 import { BarComponent } from './demo/bar-di-zones/bar.component';
+import { TodoComponent } from './demo/todo-list/todo.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'movies', component: MoviesComponent },
   { path: 'bar', component: BarComponent },
+  { path: 'todo',component:TodoComponent },
   {
     path: 'register', component: RegisterComponent,
     canDeactivate: [

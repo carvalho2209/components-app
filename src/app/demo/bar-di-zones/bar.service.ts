@@ -31,3 +31,7 @@ export class BarServices {
   }
 
 }
+
+export abstract class DrinkService {
+  getDrinks: () => string
+}

@@ -21,37 +21,43 @@ export class MenuComponent {
     {
       link: '/contact',
       name: 'Contact',
-      exact: true,
+      exact: false,
       admin: false
     },
     {
       link: '/movies',
       name: 'Movies',
-      exact: true,
+      exact: false,
       admin: false
     },
     {
       link: '/register',
       name: 'Register',
-      exact: true,
+      exact: false,
       admin: false
     },
     {
       link: '/products',
       name: 'Products',
-      exact: true,
+      exact: false,
       admin: false
     },
     {
       link: '/bar',
       name: 'Bar',
-      exact: true,
+      exact: false,
+      admin: false
+    },
+    {
+      link: '/todo',
+      name: 'To Do',
+      exact: false,
       admin: false
     },
     {
       link: '/admin',
       name: 'Admin',
-      exact: true,
+      exact: false,
       admin: false
     },
   ];

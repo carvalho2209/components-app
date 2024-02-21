@@ -1,5 +1,5 @@
 import { Component, Inject, Injector, OnInit } from "@angular/core";
-import { BarFactory, BarServices } from './bar.service';
+import { BarFactory, BarServices, DrinkService } from './bar.service';
 import { BarUnityConfig, Bar_Unity_Config } from './bar.config';
 import { HttpClient } from "@angular/common/http";
 
@@ -7,9 +7,9 @@ import { HttpClient } from "@angular/common/http";
   selector: 'app-bar',
   templateUrl: './bar.component.html',
   providers: [
-    { provide: BarServices, useClass: BarServices },
+    //{ provide: BarServices, useClass: BarServices },
     { provide: BarServices, useFactory: BarFactory, deps: [HttpClient, Injector] },
-
+    { provide: DrinkService, useExisting: BarServices },
   ]
 })
 
@@ -31,5 +31,4 @@ export class BarComponent implements OnInit {
 
     this.dataUnities = this.barServices.getUnities();
   }
-
 }

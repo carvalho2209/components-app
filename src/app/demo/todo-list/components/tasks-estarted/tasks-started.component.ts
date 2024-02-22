@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { Observable } from "rxjs";
+import { Observable, map } from "rxjs";
+import { Store } from "../../todo.store";
 import { TasksService } from "../../todo.service";
 
 @Component({
@@ -11,9 +12,16 @@ export class TasksStarted implements OnInit {
 
   started$: Observable<any[]>;
 
-  constructor(private tasksService: TasksService) { }
+  constructor(private taskeService: TasksService, private store: Store) { }
 
   ngOnInit(): void {
-    this.started$ = this.tasksService.getTodoList$;
+    this.started$ = this.store.getTodoList()
+      .pipe(
+        map(todolist => todolist.filter(task => task.started && !task.finished))
+      );
+  }
+
+  onToggle(event) {
+    this.taskeService.toggle(event);
   }
 }

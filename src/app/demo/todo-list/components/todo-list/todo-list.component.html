@@ -5,9 +5,17 @@
 
   <table class="table table-striped">
     <tbody>
-      <tr *ngFor="let item of list">
+      <tr *ngFor="let item of list; index as i">
         <td>
           <span>{{ item.name }}</span>
+          <span *ngIf="!item.finished && item.started" class="task-list__finished"
+            (click)="toggleItem(i,'finisher')"></span>
+          <span *ngIf="!item.finished && !item.started" class="task-list__started"
+            (click)="toggleItem(i,'start')"></span>
+          <span *ngIf="item.finished && !item.started" class="task-list__back"
+            (click)="toggleItem(i,'restart')"></span>
+          <span *ngIf="!item.finished && item.started" class="task-list__back"
+            (click)="toggleItem(i,'cancel')"></span>
         </td>
       </tr>
     </tbody>
